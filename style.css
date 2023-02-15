@@ -1,0 +1,718 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Alkalami', serif;
+}
+
+#Home{
+    background: url("/Assets/MoonsoonBanner.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.logo{
+    width: 140px;
+    position: absolute;
+    top: 4%;
+    left: 5%
+}
+
+.CoAT{
+    width: 450px;
+    position: relative;
+    top: 4%;
+    align-self: center;
+}
+
+.banner-text{
+    text-align: center;
+    color: #fff;
+    padding-top: 180px;
+}
+
+.banner-text h1{
+    font-size: 130px;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.banner-text p{
+    font-size: 20px;
+    font-style: italic;
+    color: #2EF2DF;
+}
+
+.banner-btn{
+    margin: 70px auto 0 ;
+
+}
+
+.banner-btn a{
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 0;
+    color: #fff;
+    border: .5px solid #fff;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s;
+}
+
+.banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #4D39AA;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.banner-btn a:hover span{
+    width: 100%;
+}
+
+.banner-btn a:hover{
+    color: #5cffdf;
+}
+
+#sideNav{
+    width: 150px;
+    height: 100vh;
+    position: fixed;
+    right: -250px;
+    top: 0;
+    background: #272727;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 50px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#menuBtn{
+    width: 50px;
+    height: 50px;
+    background: #272727;
+    text-align: center;
+    position: fixed;
+    right: 30px;
+    top: 20px;
+    border-radius: 3px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+#menuBtn img{
+    width: 20px;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 770px)
+{
+    .banner-text h1
+    {
+        font-size: 44px;
+    }
+    .banner-btn a
+    {
+        display: block;
+        margin: 20px auto;
+    }
+    .CoAT1
+    {
+        max-width: 80%;
+    }
+}
+
+/*-- About --*/
+#About{
+    width: 100%;
+    padding: 70px 0;
+    background-color: #3d3d3d;
+}
+
+.Title-Text{
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.Title-Text h2{
+    text-align: center;
+    margin: 2%;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+    color: #2EF2DF;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.Title-Text h2::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#4D39AA, #DCC22F);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.Title-Text h1{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+}
+
+.Title-Text h5{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    color: #15d4ee;
+}
+
+.Title-Text p{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.Title-Text img{
+    background-size: cover;
+    background-position: center;
+}
+
+/*-- Games --*/
+#Games{
+    width: 100%;
+    padding: 30px 0;
+    background-color: #3d3d3d;
+}
+
+#Games2{
+    width: 100%;
+    padding: 30px 0;
+    background-color: #272727;
+}
+
+.Games-box{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+
+.Single-game{
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+}
+
+.Single-game img{
+    width: 100%;
+    border-radius: 7px;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(rgba(0,0,0,0.5),#4D39AA);
+    opacity: 0;
+    transition: 1s;
+}
+
+.Single-game:hover .overlay{
+    opacity: 1;
+    
+}
+
+.game-desc{
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: 1s;
+}
+
+hr{
+    background: #fff;
+    height: 2px;
+    border: 0;
+    margin: 15px auto;
+    width: 60%;
+}
+
+.game-desc p{
+    font-size: 14px;
+}
+
+.Single-game:hover .game-desc{
+    bottom: 40%;
+    opacity: 1;
+}
+
+@media screen and (max-width: 770px)
+{
+    .Single-game
+    {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .game-desc p
+    {
+        font-size: 12px;
+    }
+    hr
+    {
+        margin: 5px auto;
+    }
+    .Single-game:hover .game-desc{
+        bottom: 25% !important;
+    }
+}
+
+/*-- Team --*/
+#Team{
+    width: 100%;
+    padding: 70px 0;
+    background-color: #272727;
+}
+
+.Team-row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.Team-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #4D39AA;
+    cursor: pointer;
+    color: #fff;
+}
+
+.Team-col:hover{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 3px #DCC22F;
+    cursor: pointer;
+    color: #fff;
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+}
+
+.Team-col p{
+    font-size: 14px;
+}
+
+.Team-row-2{
+    width: 80%;
+    margin: auto;
+    padding: 0px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#Team h3{
+    text-align: center;
+    margin: 2%;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+}
+
+.Member{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.Member img{
+    width: 75px;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+
+.Member-info{
+    text-decoration: none;
+}
+
+.Member-info img{
+    width: 25px;
+    height: 25px;
+    margin-right: -2px;
+}
+
+.Member-info h4{
+    font-size: 18px;
+}
+
+.Member-info h5{
+    font-size: 19px;
+    text-align: center;
+}
+@media screen and (max-width: 770px)
+{
+   .Team-col
+   {
+        flex-basis: 100%;
+   } 
+   .Team-col:hover
+   {
+        flex-basis: 100%;
+   }
+}
+
+#Contact{
+    padding: 20px 0 20px;
+    background-color: #3d3d3d;
+    position: relative;
+}
+
+.contact-row{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-row h1{
+    margin: 10px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-row img{
+    position: relative;
+    top: 4%;
+    align-self: center;
+}
+
+.contact-img{
+    max-width: 250px;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+}
+
+.contact-socials{
+    text-align: center;
+}
+
+.contact-socials p{
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 770px)
+{
+    .contact-img
+    {
+        max-width: 200px;
+    }
+}
+
+/*-- CoA page --*/
+
+#CoAHome{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #9c3dd3), url("/Assets/Games/CoA\ no\ logo.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.CoAbanner-text{
+    text-align: center;
+    color: #fff;
+    padding-top: 100px;
+}
+
+/*-- Discord --*/
+#Discord{
+    width: 100%;
+    padding: 70px 0;
+    background-color: #3d3d3d;
+}
+
+.Title-Text{
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.Title-Text h2{
+    text-align: center;
+    margin: 2%;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+    color: #2EF2DF;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.Title-Text h2::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#2EF2DF, #DCC22F);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.Title-Text h1{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+}
+
+.Title-Text h5{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    color: #15d4ee;
+}
+
+.Title-Text p{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.Title-Text ul{
+    font-size: 18px;
+    color: #15d4ee;
+    margin-left: 10%;
+    margin-right: 10%;
+    list-style: circle;
+    list-style-position: inside;
+}
+
+.Title-Text img{
+    background-size: cover;
+    background-position: center;
+}
+
+/*-- Features --*/
+#Features{
+    width: 100%;
+    padding: 70px 0;
+    background-color: #272727;
+}
+
+.Title-Text{
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.Title-Text h2{
+    text-align: center;
+    margin: 2%;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+    color: #DCC22F;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.Title-Text h2::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#DCC22F, #164df2, #0e2759);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.Title-Text h1{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+}
+
+.Title-Text h5{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    color: #15d4ee;
+}
+
+.Title-Text p{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.Title-Text p1{
+    font-size: 15px;
+    color: #666666;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.Title-Text ul{
+    font-size: 18px;
+    color: #15d4ee;
+    margin-left: 10%;
+    margin-right: 10%;
+    list-style: circle;
+    list-style-position: inside;
+}
+
+.Title-Text img{
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-frame{
+    overflow: hidden;
+    height: 800px;
+    width: 1200px;
+    margin-left: 360px;
+    margin-top: 20px;
+}
+
+/*---------- SLIDE ANIMATION --------------*/
+
+
+@keyframes slide_animation{
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {left:1200px;}
+    30% {left:1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0px;}
+    90% {left: 0px;}
+    100% {left:0px;}
+}
+.slide-images{
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    animation-name: slide_animation;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.img-container{
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: left;
+}
+
+#CoAContact{
+    padding: 20px 0 20px;
+    background-color: #272727;
+    position: relative;
+}
+
+.contact-row{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-row h1{
+    margin: 10px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-row img{
+    position: relative;
+    top: 4%;
+    align-self: center;
+}
+
+.contact-img{
+    max-width: 250px;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+}
+
+.contact-socials{
+    text-align: center;
+}
+
+.contact-socials p{
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 770px)
+{
+    .contact-img
+    {
+        max-width: 200px;
+    }
+}
